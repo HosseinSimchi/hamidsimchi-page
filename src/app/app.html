@@ -64,24 +64,14 @@
 <div class="container-fluid latest-news py-5">
   <div class="container py-5">
     <h2 class="mb-4">Latest Articles & Books</h2>
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+    <div class="">
+      <swiper-container #swiperContainer init="false" class="mySwiper">
+        @for (slide of slides; track $index) {
+        <swiper-slide>
+          <img [src]="slide" alt="Nature image" class="slide-image" />
+        </swiper-slide>
+        }
+      </swiper-container>
     </div>
   </div>
 </div>
